@@ -1,0 +1,19 @@
+{
+  "name": "jpp-ol-api",
+  "version": "1.0.0",
+  "description": "api jpp-ol",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fendysaputro/jpp-ol.git"
+  },
+  "author": "phephen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fendysaputro/jpp-ol/issues"
+  },
+  "homepage": "https://github.com/fendysaputro/jpp-ol#readme"
+}
