@@ -3,7 +3,7 @@ let couchbase = require('couchbase');
 let ottoman = require('ottoman');
 
 let endpointURL = config.couchbase.endpoint;
-let bucketName = config.couchbase.jpp-ol-bucket;
+let bucketName = config.couchbase.jppolbucket;
 let user = config.couchbase.user;
 let password = config.couchbase.password;
 

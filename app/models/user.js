@@ -3,7 +3,7 @@ var UserModel = ottoman.model('User', {
     name: 'string',
     phone: 'string',
     email: 'string',
-    password: 'string',
+    passwd: 'string',
     token: 'string',
     types: 'string',
     created_at:{types: "Date", default: Date.now}

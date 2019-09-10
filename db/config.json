@@ -3,6 +3,6 @@
         "endpoint": "couchbase://localhost",
         "user": "Administrator",
         "password": "q1w2e3r4",
-        "jpp-ol-bucket": "jpp-ol-bucket"
+        "jppolbucket": "jppolbucket"
     }
 }

@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded());
 var originConfig = require('./db/origin');
 var cors = require('cors');
 const corsOption = {
@@ -21,8 +22,8 @@ var userRoute = require('./app/routers/user');
 
 app.use('/apis/'+api_version_1+'/user', userRoute);
 
-var InsertRoute = require('./app/routers/bulkinsert');
-app.use('/api/'+api_version_1+'/insert', InsertRoute);
+// var InsertRoute = require('./app/routers/bulkinsert');
+// app.use('/apis/'+api_version_1+'/insert', InsertRoute);
 
 var port = process.env.PORT || 8001;
 app.listen(port);
