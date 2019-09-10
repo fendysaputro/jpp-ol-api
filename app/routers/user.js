@@ -59,7 +59,8 @@ router.post('/register', function(req, res, next){
         name: req.body.name,
         phone: req.body.phone,
         email: req.body.email,
-        passwd: md5.HashMD5(req.body.password),
+        // passwd: md5.HashMD5(req.body.password),
+        passwd: req.body.password,
         token: ""
     });
     console.log(User);
