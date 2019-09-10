@@ -1,3 +1,3 @@
 module.exports = {
-    whitelist : ['http://localhost:8339', 'http://jpp-ol.com']
+    whitelist : ['http://localhost:8001', 'http://localhost:8002']
 };

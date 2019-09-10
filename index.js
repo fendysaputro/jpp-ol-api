@@ -24,6 +24,6 @@ app.use('/apis/'+api_version_1+'/user', userRoute);
 var InsertRoute = require('./app/routers/bulkinsert');
 app.use('/api/'+api_version_1+'/insert', InsertRoute);
 
-var port = process.env.PORT || 8338;
+var port = process.env.PORT || 8001;
 app.listen(port);
 console.log("Go to http://localhost:" + port);
