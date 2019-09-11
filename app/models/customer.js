@@ -5,6 +5,7 @@ var CustomerModel = ottoman.model('Customer', {
     phone: 'string',
     email: 'string',
     password: 'string',
+    contact_person: 'string',
     token: 'string',
     types: 'string',
     created_at: {type: "Date", default: Date.now}

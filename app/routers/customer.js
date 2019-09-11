@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var CustomerModel = require('../models/customer');
-var jwt = require('../lib/jwtservice');
+var JWT = require('../lib/jwtservice');
 var md5 = require('../lib/hashservice');
 var ottoman = require('../../db').ottoman;
 
@@ -40,5 +40,36 @@ router.post('/authenticate', function(req, res, next){
             subject: s, 
             audience: a,
         }
-    })
+        delete customers[0].password;
+        var data = customers[0];
+        var payload = {
+
+        }
+        var token = JWT.sign(payload, option);
+            data['token'] = token;
+        var verify = JWT.verify(token, option);
+        verify['now'] = new Date();
+        console.log(verify);
+        res.json({r:true, m: "Success", d: data})
+    });
+});
+
+router.post('/register', function(req, res, next){
+    var Customer = new CustomerModel({
+        name : req.body.name,
+        phone : req.body.phone,
+        email : req.body.email,
+        contact_person: req.body.contact_person,
+        // password : md5.HashMD5(req.body.password),
+        password : req.body.password,
+        token: ""
+    });
+    console.log(Customer);
+    Customer.save(function(err){
+        if (err) return res.json({r:false, m: err})
+
+        res.json({r:true, m: "Success", d: Customer});
+    });
 })
+
+module.exports = router;

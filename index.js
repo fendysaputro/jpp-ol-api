@@ -19,8 +19,10 @@ app.use(cors(corsOption));
 
 var api_version_1 = 'v1';
 var userRoute = require('./app/routers/user');
+var customerRoute = require('./app/routers/customer');
 
 app.use('/apis/'+api_version_1+'/user', userRoute);
+app.use('/apis/'+api_version_1+'/customer', customerRoute);
 
 // var InsertRoute = require('./app/routers/bulkinsert');
 // app.use('/apis/'+api_version_1+'/insert', InsertRoute);
