@@ -20,7 +20,7 @@ router.get('/activate/:id', function(req, res, next){
 });
 
 router.post('/authenticate', function(req, res, next) {
-    UserModel.find({email: req.body.email, passwd: md5.HashMD5(req.body.password)}, function(error, users){
+    UserModel.find({email: req.body.email, password: req.body.password}, function(error, users){
         if(error){
             console.log("An error happened -&gt; " + JSON.stringify(error));
             return res.json({r:false, m: error})
@@ -60,7 +60,7 @@ router.post('/register', function(req, res, next){
         phone: req.body.phone,
         email: req.body.email,
         // passwd: md5.HashMD5(req.body.password),
-        passwd: req.body.password,
+        password: req.body.password,
         token: ""
     });
     console.log(User);
